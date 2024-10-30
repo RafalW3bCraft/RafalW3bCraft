@@ -3,7 +3,7 @@
 ###
 
 <div align="center">
-  <img height="300" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif" />
+  <img height="400" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif" />
 </div>
 
 ###
