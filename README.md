@@ -120,10 +120,10 @@
 ###
 
 <div align="center">
-  <img height="200" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif"  />
+  <img height="100" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif"  />
 </div>
 <div align="center">
-  <img height="200" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif" />
+  <img height="500" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif" />
 </div>
 
 ###
