@@ -3,18 +3,12 @@
 ###
 
 <div align="center">
-  <img height="400" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif" />
+  <img height="600" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif"  />
 </div>
 
 ###
-'''
-<div align="center">
-  <img height="250" src="https://giffiles.alphacoders.com/120/120141.gif"  />
-</div>
-'''
-###
 
-<h2 align="left">🙋‍♂️ About Me:</h2>
+<h2 align="left">🙋‍♂️ Discover My Journey Here:</h2>
 
 ###
 
@@ -42,7 +36,6 @@
   <a href="https://www.linkedin.com/in/shahbaz-badi-6bb341152/" target="_blank">
     <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
   </a>
-  <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
 </div>
 
 ###
@@ -133,10 +126,13 @@
 
 ###
 
-<p align="center"> 
-  Visitor count<br>
-  <img src="https://visitcount.itsvg.in/api?id=rafalw3bcraft&icon=0&color=0" />
-</p>
+<h2 align="center">Total Visits Recorded Today:</h2>
+
+###
+
+<div align="center">
+  <img src="https://profile-counter.glitch.me/RafalW3bCraft/count.svg?"  />
+</div>
 
 ###
 
