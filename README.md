@@ -1,4 +1,3 @@
-
 <div align="center">
   <img height="200" src="https://giffiles.alphacoders.com/120/120141.gif"  />
 </div>
@@ -121,20 +120,17 @@
 ###
 
 <div align="center">
+  <img height="200" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif"  />
+</div>
+
+###
+
+<div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=RafalW3bCraft&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=gotham&locale=en&hide_border=false&custom_title=Contribution%20Stats" height="150" alt="stats graph"  />
   <img src="https://streak-stats.demolab.com?user=RafalW3bCraft&locale=en&mode=daily&theme=merko&hide_border=false&border_radius=5" height="150" alt="streak graph"  />
 </div>
 
 ###
-
-<p align="center"> 
-  Visitor count<br>
-  <img src="https://profile-counter.glitch.me/sagar-viradiya/count.svg" />
-</p>
-
-###
-
-<br clear="both">
 
 <img src="https://raw.githubusercontent.com/RafalW3bCraft/RafalW3bCraft/output/snake.svg" alt="Snake animation" />
 
