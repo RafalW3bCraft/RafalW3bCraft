@@ -1,4 +1,10 @@
-<h2 align="left">👋 Hello There: Welcome to my World🌐</h2>
+<h2 align="center">👋 Hey: Welcome to my World</h2>
+
+###
+
+<div align="center">
+  <img height="300" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif" />
+</div>
 
 ###
 
@@ -129,14 +135,8 @@
 
 <p align="center"> 
   Visitor count<br>
-  <img src="https://profile-counter.glitch.me/sagar-viradiya/count.svg" />
+  <img src="https://visitcount.itsvg.in/api?id=rafalw3bcraft&icon=0&color=0" />
 </p>
-
-###
-
-<div align="center">
-  <img height="300" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif" />
-</div>
 
 ###
 
