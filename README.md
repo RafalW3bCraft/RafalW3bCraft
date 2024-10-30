@@ -127,7 +127,10 @@
 
 ###
 
-<img align="right" height="150" src="https://c.tenor.com/yPglcEf0EBAAAAAM/lx28-hacker.gif"  />
+<p align="center"> 
+  Visitor count<br>
+  <img src="https://profile-counter.glitch.me/sagar-viradiya/count.svg" />
+</p>
 
 ###
 
