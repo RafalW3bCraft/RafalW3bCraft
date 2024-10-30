@@ -1,6 +1,14 @@
+<h2 align="left">👋 Hello There: Welcome to my World🌐</h2>
+
+###
+
 <div align="center">
-  <img height="200" src="https://giffiles.alphacoders.com/120/120141.gif"  />
+  <img height="250" src="https://giffiles.alphacoders.com/120/120141.gif"  />
 </div>
+
+###
+
+<h2 align="left">🙋‍♂️ About Me:</h2>
 
 ###
 
