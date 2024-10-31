@@ -1,18 +1,32 @@
+![logo](https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/banner.png)
+
 <h2 align="center">👋 Hey: Welcome to my World</h2>
 
 ###
 
 <div align="center">
-  <img height="600" src="https://1.bp.blogspot.com/-mYhBo9xbISU/WMv9KOjtaMI/AAAAAAABqMg/m8jNiw9nQFYJzXYRYB_9cUoHqsSx5IHHACLcB/s1600/1489595907001Project-Deadline-Progress-Bar-Animation.gif"  />
+  <img height="200" width="600" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
+  <img align="right" height="200" width="200" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
+  <img align="left" height="200" width="200" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
+
 </div>
 
 ###
 
 <h2 align="left">🙋‍♂️ Discover My Journey Here:</h2>
 
-###
+<img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RafalW3bCraft&locale=en&mode=daily&theme=merko&hide_border=false&border_radius=5" height="250" alt="streak graph"  />
 
-<h4 align="left">I am a cybersecurity and programming professional at RafalW3bCraft, specializing in developing secure applications and enhancing cybersecurity measures. Passionate about continuous learning, I strive to leverage emerging technologies and foster security awareness to make a meaningful impact in the CyberWorld.</h4>
+👋 I'm a cybersecurity and programming professional currently based at RafalW3bCraft.
+
+
+### Skills:
+- Cybersecurity Analysis
+- Software Development
+- Risk Mitigation Strategies
+
+### Passion:
+Passionate about continuous learning, I strive to leverage emerging technologies and foster security awareness to make a meaningful impact in the CyberWorld.
 
 ###
 
@@ -40,7 +54,7 @@
 
 ###
 
-<h2 align="left">💻 Technology Stack:</h2>
+<h2 align="left">💻 Discover My Tech Arsenal:</h2>
 
 ###
 
@@ -126,13 +140,7 @@
 
 ###
 
-<h2 align="center">Total Visits Recorded Today:</h2>
-
-###
-
-<div align="center">
-  <img src="https://profile-counter.glitch.me/RafalW3bCraft/count.svg?"  />
-</div>
+<h2 align="left">⭐ Highlighting My Impact:</h2>
 
 ###
 
@@ -144,5 +152,15 @@
 ###
 
 <img src="https://raw.githubusercontent.com/RafalW3bCraft/RafalW3bCraft/output/snake.svg" alt="Snake animation" />
+
+###
+
+<h2 align="center">Total Visits Recorded Today:</h2>
+
+###
+
+<div align="center">
+  <img src="https://profile-counter.glitch.me/RafalW3bCraft/count.svg?"  />
+</div>
 
 ###
