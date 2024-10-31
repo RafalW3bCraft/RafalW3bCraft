@@ -6,8 +6,8 @@
 
 <div align="center">
   <img height="200" width="600" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
-  <img align="right" height="200" width="200" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
-  <img align="left" height="200" width="200" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
+  <img align="right" height="200" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
+  <img align="left" height="200" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
 
 </div>
 
