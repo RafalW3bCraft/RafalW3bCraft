@@ -5,7 +5,7 @@
 ###
 
 <div align="center">
-  <img height="200" width="600" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
+  <img height="300" width="800" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
 </div>
 
 ###
@@ -14,13 +14,13 @@
 
 <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RafalW3bCraft&locale=en&mode=daily&theme=merko&hide_border=false&border_radius=5" height="250" alt="streak graph"  />
 
-👋 I'm a cybersecurity and programming professional currently based at RafalW3bCraft.
-
+<p>👋 I'm a cybersecurity and programming professional currently based at RafalW3bCraft.</p>
 
 ### Skills:
+
 - Cybersecurity Analysis
 - Software Development
-- Risk Mitigation Strategies
+- Vulnerability Discover
 
 ### Passion:
 Passionate about continuous learning, I strive to leverage emerging technologies and foster security awareness to make a meaningful impact in the CyberWorld.
