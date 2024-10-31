@@ -1,4 +1,4 @@
-![logo](https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/banner.png)
+<!--![logo](https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/banner.png)-->
 
 <h2 align="center">👋 Hey: Welcome to my World</h2>
 
