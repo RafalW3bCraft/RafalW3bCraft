@@ -143,7 +143,7 @@ Passionate about continuous learning, I strive to leverage emerging technologies
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=RafalW3bCraft&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=gotham&locale=en&hide_border=false&custom_title=Contribution%20Stats" height="150" alt="stats graph"  />
- # <img src="https://streak-stats.demolab.com?user=RafalW3bCraft&locale=en&mode=daily&theme=merko&hide_border=false&border_radius=5" height="150" alt="streak graph"  />
+
 </div>
 
 ###
