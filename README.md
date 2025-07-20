@@ -138,11 +138,10 @@ Passionate about continuous learning, I strive to leverage emerging technologies
 <img src="https://raw.githubusercontent.com/RafalW3bCraft/RafalW3bCraft/output/snake.svg" alt="Snake animation" />
 
 ###
-
- <div style="text-align: center;">
-   <img src="https://profile-counter.glitch.me/RafalW3bCraft/count.svg" 
-      alt="Visitor Counter" 
-      style="max-width: 100%; height: auto;"/>
+<div align="center">
+  <img src="https://count.getloli.com/get/@RafalW3bCraft?theme=rule34" 
+       alt="Visitor Counter"
+       style="max-width: 100%; height: auto;" />
 </div>
 </body>
 </html>
