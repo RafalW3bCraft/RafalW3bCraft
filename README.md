@@ -139,6 +139,9 @@ Passionate about continuous learning, I strive to leverage emerging technologies
 
 ###
 <div align="center">
+  <img src="https://shields-visitor-counter.deno.dev/@RafalW3bCraft?style=for-the-badge&label=Visitors&color=0e75b6" />
+  <img src="https://api.countapi.xyz/hit/RafalW3bCraft/visits?style=flat&label=Visitors" alt="Visitor Counter" />
+
   <img src="https://count.getloli.com/get/@RafalW3bCraft?theme=rule34" 
        alt="Visitor Counter"
        style="max-width: 100%; height: auto;" />
