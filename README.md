@@ -139,11 +139,14 @@ Passionate about continuous learning, I strive to leverage emerging technologies
 
 ###
 <h2 align="center">Total Visits Recorded Till Today:</h2>
+<h2 align="center">🧠 Total Cyber Visits Logged</h2>
 
-<div align="center">
-  <img src="https://shields-visitor-counter.deno.dev/@RafalW3bCraft?style=for-the-badge&label=Visitors&color=0e75b6" 
-       alt="Visitor Counter" />
-</div>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=RafalW3bCraft&label=Visitors&color=0e75b6&style=flat-square" alt="Visitor Count" />
+  <br/>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=RafalW3bCraft.visitor-badge&left_color=black&right_color=green&left_text=Cyber+Hits" alt="Cyber Hits"/>
+  <br/>
+</p>
 
 </body>
 </html>
