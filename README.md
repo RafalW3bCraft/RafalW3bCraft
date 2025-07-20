@@ -138,8 +138,8 @@ Passionate about continuous learning, I strive to leverage emerging technologies
 <img src="https://raw.githubusercontent.com/RafalW3bCraft/RafalW3bCraft/output/snake.svg" alt="Snake animation" />
 
 ###
-<h2 align="center">Total Visits Recorded Till Today:</h2>
-<h2 align="center">🧠 Total Cyber Visits Logged</h2>
+<h2 align="center">👁️‍🗨️ Eyes on the Grid: Visitor Tally</h2>
+
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=RafalW3bCraft&label=Visitors&color=0e75b6&style=flat-square" alt="Visitor Count" />
