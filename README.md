@@ -138,16 +138,14 @@ Passionate about continuous learning, I strive to leverage emerging technologies
 <img src="https://raw.githubusercontent.com/RafalW3bCraft/RafalW3bCraft/output/snake.svg" alt="Snake animation" />
 
 ###
-<div align="center">
-  <img src="https://shields-visitor-counter.deno.dev/@RafalW3bCraft?style=for-the-badge&label=Visitors&color=0e75b6" />
-  <img src="https://api.countapi.xyz/hit/RafalW3bCraft/visits?style=flat&label=Visitors" alt="Visitor Counter" />
+<h2 align="center">Total Visits Recorded Till Today:</h2>
 
-  <img src="https://count.getloli.com/get/@RafalW3bCraft?theme=rule34" 
-       alt="Visitor Counter"
-       style="max-width: 100%; height: auto;" />
+<div align="center">
+  <img src="https://shields-visitor-counter.deno.dev/@RafalW3bCraft?style=for-the-badge&label=Visitors&color=0e75b6" 
+       alt="Visitor Counter" />
 </div>
+
 </body>
 </html>
-<h2 align="center">Total Visits Recorded Till Today:</h2>
 
 ###
