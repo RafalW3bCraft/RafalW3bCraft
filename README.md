@@ -1,7 +1,7 @@
 <!--![logo](https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/banner.png)-->
 
 <h1 align="center">⚡ RafalW3bCraft ⚡</h1>
-<h3 align="center">👋 Hey: Welcome to my World</h2>
+<h3 align="center">👋 Hey: Welcome to my World</h3>
 
 <div align="center">
   <img height="300" width="800" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
