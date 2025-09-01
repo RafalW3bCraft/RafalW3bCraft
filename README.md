@@ -2,17 +2,11 @@
 
 <h2 align="center">👋 Hey: Welcome to my World</h2>
 
-###
-
 <div align="center">
   <img height="300" width="800" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" />
 </div>
 
-###
-
 <h2 align="left">🙋‍♂️ Discover My Journey Here:</h2>
-
-<img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RafalW3bCraft&locale=en&mode=daily&theme=merko&hide_border=false&border_radius=5" height="250" alt="streak graph"  />
 
 <p>👋 I'm a cybersecurity and programming professional currently based at RafalW3bCraft.</p>
 
@@ -25,32 +19,7 @@
 ### Passion:
 Passionate about continuous learning, I strive to leverage emerging technologies and foster security awareness to make a meaningful impact in the CyberWorld.
 
-###
-
-<h2 align="left">🌐 How to reach me:</h2>
-
-###
-
-<div align="left">
-  <a href="https://codepen.io/RafalW3bCraft" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Codepen&logo=codepen&label=&color=000000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="codepen logo"  />
-  </a>
-  <a href="https://www.youtube.com/@RafalW3bCraft" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Youtube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="youtube logo"  />
-  </a>
-  <a href="https://twitter.com/RafalW3bCraft" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Twitter&logo=twitter&label=&color=1DA1F2&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="twitter logo"  />
-  </a>
-  <a href="https://www.instagram.com/rafalw3bcraft/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
-  </a>
-</div>
-
-###
-
 <h2 align="left">💻 Discover My Tech Arsenal:</h2>
-
-###
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
@@ -132,13 +101,39 @@ Passionate about continuous learning, I strive to leverage emerging technologies
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="30" alt="vscode logo"  />
 </div>
 
+## 📊 GitHub Analytics
 
-###
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=RafalW3bCraft&show_icons=true&theme=merko&hide_border=false&border_radius=5" height="200" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RafalW3bCraft&locale=en&layout=compact&theme=merko&hide_border=false&border_radius=5" height="200" alt="Top Languages" />
+</div>
+
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=RafalW3bCraft&theme=merko&hide_border=false&border_radius=5" height="200" alt="GitHub Streak" />
+</div>
+
+## 📈 Contribution Activity
 
 <img src="https://raw.githubusercontent.com/RafalW3bCraft/RafalW3bCraft/output/snake.svg" alt="Snake animation" />
 
-###
-<h2 align="center">👁️‍🗨️ Eyes on the Grid: Visitor Tally</h2>
+<h2 align="left">🌐 How to reach me:</h2>
+
+<div align="center">
+  <a href="https://codepen.io/RafalW3bCraft" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Codepen&logo=codepen&label=&color=000000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="codepen logo"  />
+  </a>
+  <a href="https://www.youtube.com/@RafalW3bCraft" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Youtube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="youtube logo"  />
+  </a>
+  <a href="https://twitter.com/RafalW3bCraft" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Twitter&logo=twitter&label=&color=1DA1F2&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="twitter logo"  />
+  </a>
+  <a href="https://www.instagram.com/rafalw3bcraft/" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
+  </a>
+</div>
+
+<h2 align="left">👁️‍🗨️ Eyes on the Grid: Visitor Tally</h2>
 
 
 <p align="center">
@@ -147,8 +142,3 @@ Passionate about continuous learning, I strive to leverage emerging technologies
   <img src="https://visitor-badge.laobi.icu/badge?page_id=RafalW3bCraft.visitor-badge&left_color=black&right_color=green&left_text=Cyber+Hits" alt="Cyber Hits"/>
   <br/>
 </p>
-
-</body>
-</html>
-
-###
