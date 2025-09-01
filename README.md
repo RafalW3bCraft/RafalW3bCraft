@@ -15,7 +15,7 @@
 
 <br />
 
-🔹 **Identity:** Builder. Thinker. Cyber Warrior.  
+🔹 **Identity:** Builder. Thinke.  
 🔹 **Philosophy:** *Question everything. Trust nothing.*  
 🔹 **Objective:** To excel, seek 14ALL, break barriers, and build — then rebuild greater.
 
