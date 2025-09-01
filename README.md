@@ -97,8 +97,9 @@ I burn with a hunger for knowledge — venturing into the bleeding edge, walking
 ---
 
 ## 🐍 Contribution Activity
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/RafalW3bCraft/RafalW3bCraft/output/snake.svg" alt="Snake animation" />
+  <img src="https://raw.githubusercontent.com/RafalW3bCraft/RafalW3bCraft/output/snake-dark.svg" alt="Snake animation (dark)" />
 </p>
 
 ---
