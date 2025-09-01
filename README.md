@@ -13,13 +13,13 @@
 
 👋 I am a **builder of systems** and a **breaker of illusions** — my world revolves around **uncovering vulnerabilities, weaponizing knowledge, and designing frameworks** that **challenge limitations** while **redefining resilience** in the digital realm.
 
-<br>
+<br />
 
 🔹 **Identity:** Builder. Thinker. Cyber Warrior.  
 🔹 **Philosophy:** *Question everything. Trust nothing.*  
 🔹 **Objective:** To excel, seek 14ALL, break barriers, and build — then rebuild greater.
 
-<br>
+<br />
 
 ## 🛠️ Skill Tree
 
@@ -30,16 +30,16 @@
 ⚡ **Automation Wizardry** – Bash, Python, Go  
 ☁️ **Cloud & Container Mastery** – AWS | Docker | Kubernetes  
 
-<br>
+<br />
 
 ## 🚀 Passion & Drive
 
 I burn with a hunger for knowledge — venturing into the bleeding edge, walking the adversary’s path, and echoing awareness across the unseen corridors of digital space.
 
-<br>
+<br />
 
 ## 💻 Discover My Tech Arsenal
-<br>
+<br />
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="35" alt="JavaScript" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="35" alt="React" />
