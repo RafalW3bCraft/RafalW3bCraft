@@ -86,7 +86,7 @@ I burn with a hunger for knowledge — venturing into the bleeding edge, walking
 
 ## 📊 Github Analytics
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=RafalW3bCraft&&show_icons=true&theme=merko&hide_border=false&border_radius=5" height="200" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=RafalW3bCraft&show_icons=true&theme=merko&hide_border=false&border_radius=5" height="200" alt="GitHub Stats" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RafalW3bCraft&layout=compact&theme=merko&hide_border=false&border_radius=5" height="200" alt="Top Languages" />
 </div>
 
