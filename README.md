@@ -91,10 +91,6 @@ I burn with a hunger for knowledge — venturing into the bleeding edge, walking
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RafalW3bCraft&layout=compact&theme=radical&hide_border=true&border_radius=8" alt="Top Languages" />
 </div>
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=RafalW3bCraft&theme=radical&hide_border=true&border_radius=8" alt="GitHub Streak" />
-</div>
-
 ---
 
 ## 🐍 Contribution Activity
