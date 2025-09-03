@@ -84,16 +84,16 @@ I burn with a hunger for knowledge — venturing into the bleeding edge, walking
 
 ---
 
-## 📊 Github Analytics
+## 📊 GitHub Analytics
+
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=RafalW3bCraft&show_icons=true&theme=merko&hide_border=false&border_radius=5 alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RafalW3bCraft&layout=compact&theme=merko&hide_border=false&border_radius=5&&height=200 alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api?username=RafalW3bCraft&show_icons=true&theme=radical&hide_border=true&border_radius=8" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RafalW3bCraft&layout=compact&theme=radical&hide_border=true&border_radius=8" alt="Top Languages" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=RafalW3bCraft&theme=merko&hide_border=false&border_radius=5%22%20height=%22200%22 alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=RafalW3bCraft&theme=radical&hide_border=true&border_radius=8" alt="GitHub Streak" />
 </div>
-
 ---
 
 ## 🐍 Contribution Activity
