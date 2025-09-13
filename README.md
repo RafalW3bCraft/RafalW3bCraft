@@ -11,8 +11,6 @@
 
 ## 🙋‍♂️ Discover My Journey Here
 
-👋 I am a **builder of systems** and a **breaker of illusions** — my world revolves around **uncovering vulnerabilities, weaponizing knowledge, and designing frameworks** that **challenge limitations** while **redefining resilience** in the digital realm.
-
 <br />
 
 🔹 **Identity:** Builder. Thinker.  
