@@ -21,18 +21,17 @@
 
 ## 🛠️ Skill Tree
 
-🛡️ **Cybersecurity & Red Teaming** – Offensive + Defensive Tactics  
-⚔️ **Exploitation & Reverse Engineering** – Zero-day hunting  
-🔮 **AI & ML Trainer** – TensorFlow | PyTorch | Deep Learning Ops  
-🏗️ **Software Engineering** – Full-stack & scalable systems  
-⚡ **Automation Wizardry** – Bash, Python, Go  
-☁️ **Cloud & Container Mastery** – AWS | Docker | Kubernetes  
+
+🏗️ **Software Engineering** – Full-stack & scalable systems
+⚡ **Automation** – Bash, Python
+🔮 **AI & ML Trainer** – TensorFlow | PyTorch | Deep Learning Ops
+🛡️ **Red Teaming** – Offensive + Defensive Tactics 
 
 <br />
 
 ## 🚀 Passion & Drive
 
-I burn with a hunger for knowledge — venturing into the bleeding edge, walking the adversary’s path, and echoing awareness across the unseen corridors of digital space.
+I burn with an insatiable hunger for knowledge — venturing into the bleeding edge, treading the adversary’s path.
 
 <br />
 
