@@ -22,8 +22,8 @@
 ## 🛠️ Skill Tree
 
 
-🏗️ **Software Engineering** – Full-stack & scalable systems
-⚡ **Automation** – Bash, Python
+🏗️ **Software Engineering** – *Full-stack & scalable systems*
+⚡ **Automation** – *Bash, Python*
 🔮 **AI & ML Trainer** – TensorFlow | PyTorch | Deep Learning Ops
 🛡️ **Red Teaming** – Offensive + Defensive Tactics 
 
