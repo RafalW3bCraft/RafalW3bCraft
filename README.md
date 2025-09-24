@@ -1,6 +1,6 @@
 <!--![logo](https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/banner.png)-->
 
-<h1 align="center">⚡ RafalW3bCraft ⚡</h1>
+<h1 align="center"> ⚡ RafalW3bCraft ⚡</h1>
 <h3 align="center">👋 Hey: Welcome to my World</h3>
 
 <div align="center">
