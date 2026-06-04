@@ -43,7 +43,6 @@ clearance : TOP SECRET // EYES ONLY
 <br/>
 
 <div align="center">
-<img width="86%" src="https://github.com/RafalW3bCraft/RafalW3bCraft/blob/main/resources/fill.gif" alt="RafalW3bCraft — particle morph header" />
 
 <!-- ══ DIPTYCH HEADER: custom animated SVG (left) + profile GIF (right) ══ -->
 <!-- SVG: glitch · smoke · disintegration · stored in repo · no external deps -->
