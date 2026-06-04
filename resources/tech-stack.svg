@@ -1,0 +1,352 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 210" width="900" height="210" preserveAspectRatio="xMidYMid meet">
+<defs>
+<style>
+/* ═══════════════════════════════════════════════════════
+   25-SECOND CYCLE — 5 screens, 5s each with cross-fade
+   Screen 1: 0-20%   (0-5s)
+   Screen 2: 20-40%  (5-10s)
+   Screen 3: 40-60%  (10-15s)
+   Screen 4: 60-80%  (15-20s)
+   Screen 5: 80-100% (20-25s)
+═══════════════════════════════════════════════════════ */
+
+.s1 { animation: s1show 25s infinite; }
+.s2 { animation: s2show 25s infinite; }
+.s3 { animation: s3show 25s infinite; }
+.s4 { animation: s4show 25s infinite; }
+.s5 { animation: s5show 25s infinite; }
+
+@keyframes s1show {
+  0%,16%     { opacity:1; transform:translateY(0); }
+  20%        { opacity:0; transform:translateY(-7px); }
+  80%        { opacity:0; transform:translateY(7px); }
+  84%,100%   { opacity:1; transform:translateY(0); }
+}
+@keyframes s2show {
+  0%,16%     { opacity:0; transform:translateY(7px); }
+  20%,36%    { opacity:1; transform:translateY(0); }
+  40%        { opacity:0; transform:translateY(-7px); }
+  100%       { opacity:0; transform:translateY(-7px); }
+}
+@keyframes s3show {
+  0%,36%     { opacity:0; transform:translateY(7px); }
+  40%,56%    { opacity:1; transform:translateY(0); }
+  60%        { opacity:0; transform:translateY(-7px); }
+  100%       { opacity:0; }
+}
+@keyframes s4show {
+  0%,56%     { opacity:0; transform:translateY(7px); }
+  60%,76%    { opacity:1; transform:translateY(0); }
+  80%        { opacity:0; transform:translateY(-7px); }
+  100%       { opacity:0; }
+}
+@keyframes s5show {
+  0%,76%     { opacity:0; transform:translateY(7px); }
+  80%,96%    { opacity:1; transform:translateY(0); }
+  100%       { opacity:0; transform:translateY(-7px); }
+}
+
+/* Category label glow pulse */
+.cat-lbl { animation: catGlow 2s ease-in-out infinite alternate; }
+@keyframes catGlow {
+  from { opacity:.80; }
+  to   { opacity:1.0; }
+}
+
+/* Tech tags staggered fade-in (within each screen) */
+.tag { font-family:'Courier New',Courier,monospace; font-size:13px; }
+
+/* Progress bar */
+.pbar { animation: pbarFill 25s linear infinite; transform-origin:left center; }
+@keyframes pbarFill {
+  0%   { transform:scaleX(0); }
+  100% { transform:scaleX(1); }
+}
+
+/* Border glow crawl */
+.border-glow { animation: borderGlow 4s ease-in-out infinite alternate; }
+@keyframes borderGlow {
+  from { stroke:#ff2200; filter:drop-shadow(0 0 4px #ff2200); }
+  to   { stroke:#8800cc; filter:drop-shadow(0 0 6px #8800cc); }
+}
+
+/* Corner accent pulse */
+.corner { animation: cornerPulse 3s ease-in-out infinite alternate; }
+@keyframes cornerPulse {
+  from { opacity:.6; }
+  to   { opacity:1.0; }
+}
+
+/* Icon dot blink */
+.dot-live { animation: dotBlink 1.4s step-end infinite; }
+@keyframes dotBlink {
+  0%,100% { opacity:1; }
+  50%     { opacity:0; }
+}
+</style>
+
+<!-- ── BACKGROUND ──────────────────────────────────────────── -->
+<linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%"   stop-color="#060008"/>
+  <stop offset="40%"  stop-color="#0a0000"/>
+  <stop offset="100%" stop-color="#080010"/>
+</linearGradient>
+<linearGradient id="headerBg" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%"   stop-color="#1a0000"/>
+  <stop offset="50%"  stop-color="#200018"/>
+  <stop offset="100%" stop-color="#0d001a"/>
+</linearGradient>
+<linearGradient id="progBg" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%"   stop-color="#ff2200"/>
+  <stop offset="50%"  stop-color="#ff6600"/>
+  <stop offset="100%" stop-color="#8800cc"/>
+</linearGradient>
+
+<!-- Tag background -->
+<linearGradient id="tagBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" stop-color="#2a0000"/><stop offset="100%" stop-color="#1a0010"/>
+</linearGradient>
+<linearGradient id="tagBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" stop-color="#150020"/><stop offset="100%" stop-color="#0a000a"/>
+</linearGradient>
+
+<filter id="cardGlow" x="-2%" y="-5%" width="104%" height="120%">
+  <feGaussianBlur stdDeviation="3" result="b"/>
+  <feComposite in="SourceGraphic" in2="b" operator="over"/>
+</filter>
+</defs>
+
+<!-- ══ CARD SHELL ══════════════════════════════════════════════ -->
+<rect x="2" y="2" width="896" height="206" rx="6" fill="url(#cardBg)"/>
+
+<!-- Header bar -->
+<rect x="2" y="2" width="896" height="44" rx="6" fill="url(#headerBg)"/>
+<rect x="2" y="32" width="896" height="14" fill="url(#headerBg)"/>
+
+<!-- Animated border -->
+<rect class="border-glow" x="2" y="2" width="896" height="206" rx="6" fill="none" stroke-width="1.5"/>
+
+<!-- Corner accents (decorative) -->
+<g class="corner" fill="none" stroke="#ff2200" stroke-width="1.5">
+  <path d="M2,18 L2,2 L18,2"/>
+  <path d="M882,2 L898,2 L898,18"/>
+  <path d="M2,190 L2,206 L18,206"/>
+  <path d="M882,206 L898,206 L898,190"/>
+</g>
+
+<!-- Header: static elements -->
+<circle class="dot-live" cx="22" cy="24" r="5" fill="#ff2200"/>
+<text x="34" y="29" font-family="'Courier New',monospace" font-size="11" fill="#ff6644" letter-spacing="2">SYS::TECH_STACK</text>
+<text x="780" y="29" font-family="'Courier New',monospace" font-size="11" fill="#8844cc" text-anchor="end" letter-spacing="1">RafalW3bCraft.exe</text>
+<line x1="2" y1="46" x2="898" y2="46" stroke="#ff2200" stroke-width=".5" stroke-opacity=".4"/>
+
+<!-- Progress bar (bottom) -->
+<rect x="2" y="200" width="896" height="8" rx="0" fill="#0a0005"/>
+<rect class="pbar" x="2" y="200" width="896" height="8" rx="0" fill="url(#progBg)" opacity=".8"/>
+<line x1="2" y1="200" x2="898" y2="200" stroke="#ff2200" stroke-width=".4" stroke-opacity=".3"/>
+
+<!-- ══════════════════════════════════════════════════════════
+     SCREEN 1 — FULL-STACK DEVELOPMENT
+═══════════════════════════════════════════════════════════ -->
+<g class="s1">
+  <!-- Category label -->
+  <text x="450" y="80" font-family="'Arial Black',Impact,sans-serif" font-size="20"
+        font-weight="900" fill="#ff5500" text-anchor="middle" letter-spacing="3"
+        filter="url(#cardGlow)">⬡  FULL-STACK DEVELOPMENT</text>
+
+  <!-- Row 1 tags -->
+  <g font-family="'Courier New',monospace" font-size="13" text-anchor="middle">
+    <!-- React -->
+    <rect x="62" y="95" width="90" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff2200" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="107" y="113" fill="#61DAFB">⚛ React</text>
+    <!-- Next.js -->
+    <rect x="162" y="95" width="90" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff2200" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="207" y="113" fill="#ffffff">▲ Next.js</text>
+    <!-- TypeScript -->
+    <rect x="262" y="95" width="110" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff2200" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="317" y="113" fill="#3178C6">TS TypeScript</text>
+    <!-- Node.js -->
+    <rect x="382" y="95" width="90" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff2200" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="427" y="113" fill="#68A063">⬡ Node.js</text>
+    <!-- FastAPI -->
+    <rect x="482" y="95" width="90" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff2200" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="527" y="113" fill="#009688">⚡ FastAPI</text>
+    <!-- Python -->
+    <rect x="582" y="95" width="90" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff2200" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="627" y="113" fill="#FFD43B">🐍 Python</text>
+    <!-- PostgreSQL -->
+    <rect x="682" y="95" width="110" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff2200" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="737" y="113" fill="#336791">🐘 PostgreSQL</text>
+  </g>
+
+  <!-- Row 2 tags -->
+  <g font-family="'Courier New',monospace" font-size="13" text-anchor="middle">
+    <rect x="162" y="131" width="100" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="212" y="149" fill="#E10098">◈ GraphQL</text>
+    <rect x="272" y="131" width="90" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="317" y="149" fill="#ff6644">◈ REST API</text>
+    <rect x="372" y="131" width="90" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="417" y="149" fill="#F05032">⬡ Redis</text>
+    <rect x="472" y="131" width="120" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="532" y="149" fill="#cc88ff">◈ Microservices</text>
+    <rect x="602" y="131" width="100" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="652" y="149" fill="#ffffff">◈ TDD / CI</text>
+  </g>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════
+     SCREEN 2 — RED TEAM / SECURITY
+═══════════════════════════════════════════════════════════ -->
+<g class="s2" opacity="0">
+  <text x="450" y="80" font-family="'Arial Black',Impact,sans-serif" font-size="20"
+        font-weight="900" fill="#ff2200" text-anchor="middle" letter-spacing="3"
+        filter="url(#cardGlow)">⚠  RED TEAM / OFFENSIVE SECURITY</text>
+
+  <g font-family="'Courier New',monospace" font-size="13" text-anchor="middle">
+    <rect x="62" y="95" width="100" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff0000" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="112" y="113" fill="#ff4444">◈ Burp Suite</text>
+    <rect x="172" y="95" width="110" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff0000" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="227" y="113" fill="#ff6644">◈ Metasploit</text>
+    <rect x="292" y="95" width="90" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff0000" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="337" y="113" fill="#ffaa44">◈ Nmap</text>
+    <rect x="392" y="95" width="110" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff0000" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="447" y="113" fill="#ff8844">◈ OWASP Top 10</text>
+    <rect x="512" y="95" width="90" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff0000" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="557" y="113" fill="#ff5500">◈ SQLMap</text>
+    <rect x="612" y="95" width="100" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff0000" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="662" y="113" fill="#ffcc44">◈ Wireshark</text>
+    <rect x="722" y="95" width="80" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff0000" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="762" y="113" fill="#ff4466">◈ CTF</text>
+  </g>
+
+  <g font-family="'Courier New',monospace" font-size="13" text-anchor="middle">
+    <rect x="162" y="131" width="110" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc0000" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="217" y="149" fill="#ff6644">◈ Pen Testing</text>
+    <rect x="282" y="131" width="100" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc0000" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="332" y="149" fill="#ff4444">◈ Zero Trust</text>
+    <rect x="392" y="131" width="120" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc0000" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="452" y="149" fill="#ff8844">◈ Threat Modeling</text>
+    <rect x="522" y="131" width="120" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc0000" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="582" y="149" fill="#ffaa44">◈ SAST / DAST</text>
+    <rect x="652" y="131" width="90" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc0000" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="697" y="149" fill="#ff6666">◈ Exploit Dev</text>
+  </g>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════
+     SCREEN 3 — ARTIFICIAL INTELLIGENCE
+═══════════════════════════════════════════════════════════ -->
+<g class="s3" opacity="0">
+  <text x="450" y="80" font-family="'Arial Black',Impact,sans-serif" font-size="20"
+        font-weight="900" fill="#cc66ff" text-anchor="middle" letter-spacing="3"
+        filter="url(#cardGlow)">◈  ARTIFICIAL INTELLIGENCE</text>
+
+  <g font-family="'Courier New',monospace" font-size="13" text-anchor="middle">
+    <rect x="62" y="95" width="100" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="112" y="113" fill="#10A37F">◈ OpenAI API</text>
+    <rect x="172" y="95" width="100" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="222" y="113" fill="#dd88ff">◈ LangChain</text>
+    <rect x="282" y="95" width="100" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="332" y="113" fill="#ee4b2b">◈ PyTorch</text>
+    <rect x="392" y="95" width="110" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="447" y="113" fill="#cc99ff">◈ RAG Pipelines</text>
+    <rect x="512" y="95" width="100" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="562" y="113" fill="#FFD21E">◈ HuggingFace</text>
+    <rect x="622" y="95" width="90" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="667" y="113" fill="#aa66ff">◈ AI Agents</text>
+    <rect x="722" y="95" width="90" height="26" rx="4" fill="url(#tagBg2)" stroke="#8800cc" stroke-width=".8" stroke-opacity=".7"/>
+    <text x="767" y="113" fill="#cc55ff">◈ LLM Fine-tune</text>
+  </g>
+
+  <g font-family="'Courier New',monospace" font-size="13" text-anchor="middle">
+    <rect x="122" y="131" width="120" height="26" rx="4" fill="url(#tagBg1)" stroke="#6600aa" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="182" y="149" fill="#ff88ff">◈ Vector DBs</text>
+    <rect x="252" y="131" width="110" height="26" rx="4" fill="url(#tagBg1)" stroke="#6600aa" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="307" y="149" fill="#cc88ff">◈ Embeddings</text>
+    <rect x="372" y="131" width="120" height="26" rx="4" fill="url(#tagBg1)" stroke="#6600aa" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="432" y="149" fill="#aabbff">◈ Computer Vision</text>
+    <rect x="502" y="131" width="120" height="26" rx="4" fill="url(#tagBg1)" stroke="#6600aa" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="562" y="149" fill="#ddaaff">◈ Prompt Engineering</text>
+    <rect x="632" y="131" width="110" height="26" rx="4" fill="url(#tagBg1)" stroke="#6600aa" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="687" y="149" fill="#ff66cc">◈ Adversarial AI</text>
+  </g>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════
+     SCREEN 4 — INFRASTRUCTURE / DEVOPS
+═══════════════════════════════════════════════════════════ -->
+<g class="s4" opacity="0">
+  <text x="450" y="80" font-family="'Arial Black',Impact,sans-serif" font-size="20"
+        font-weight="900" fill="#ff8844" text-anchor="middle" letter-spacing="3"
+        filter="url(#cardGlow)">⚙  INFRASTRUCTURE / DEVSECOPS</text>
+
+  <g font-family="'Courier New',monospace" font-size="13" text-anchor="middle">
+    <rect x="72"  y="95" width="90"  height="26" rx="4" fill="url(#tagBg1)" stroke="#ff5500" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="117" y="113" fill="#2496ED">🐳 Docker</text>
+    <rect x="172" y="95" width="110" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff5500" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="227" y="113" fill="#326CE5">◈ Kubernetes</text>
+    <rect x="292" y="95" width="80"  height="26" rx="4" fill="url(#tagBg1)" stroke="#ff5500" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="332" y="113" fill="#FF9900">◈ AWS</text>
+    <rect x="382" y="95" width="90"  height="26" rx="4" fill="url(#tagBg1)" stroke="#ff5500" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="427" y="113" fill="#623CE4">◈ Terraform</text>
+    <rect x="482" y="95" width="130" height="26" rx="4" fill="url(#tagBg1)" stroke="#ff5500" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="547" y="113" fill="#2088FF">◈ GitHub Actions</text>
+    <rect x="622" y="95" width="90"  height="26" rx="4" fill="url(#tagBg1)" stroke="#ff5500" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="667" y="113" fill="#E24329">◈ GitLab CI</text>
+    <rect x="722" y="95" width="80"  height="26" rx="4" fill="url(#tagBg1)" stroke="#ff5500" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="762" y="113" fill="#ff9955">◈ Nginx</text>
+  </g>
+
+  <g font-family="'Courier New',monospace" font-size="13" text-anchor="middle">
+    <rect x="162" y="131" width="90"  height="26" rx="4" fill="url(#tagBg2)" stroke="#cc4400" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="207" y="149" fill="#ff6644">◈ CI/CD</text>
+    <rect x="262" y="131" width="120" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc4400" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="322" y="149" fill="#ffcc44">◈ IaC / GitOps</text>
+    <rect x="392" y="131" width="100" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc4400" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="442" y="149" fill="#ff8844">◈ Monitoring</text>
+    <rect x="502" y="131" width="120" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc4400" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="562" y="149" fill="#ffaa66">◈ Secret Scanning</text>
+    <rect x="632" y="131" width="100" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc4400" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="682" y="149" fill="#ff7744">◈ SBOM / SLSA</text>
+  </g>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════
+     SCREEN 5 — SYSTEM ARCHITECTURE
+═══════════════════════════════════════════════════════════ -->
+<g class="s5" opacity="0">
+  <text x="450" y="80" font-family="'Arial Black',Impact,sans-serif" font-size="20"
+        font-weight="900" fill="#ffcc44" text-anchor="middle" letter-spacing="3"
+        filter="url(#cardGlow)">◎  SYSTEM ARCHITECTURE</text>
+
+  <g font-family="'Courier New',monospace" font-size="13" text-anchor="middle">
+    <rect x="42"  y="95" width="120" height="26" rx="4" fill="url(#tagBg1)" stroke="#ffcc44" stroke-width=".8" stroke-opacity=".5"/>
+    <text x="102" y="113" fill="#ffeeaa">◈ Microservices</text>
+    <rect x="172" y="95" width="120" height="26" rx="4" fill="url(#tagBg1)" stroke="#ffcc44" stroke-width=".8" stroke-opacity=".5"/>
+    <text x="232" y="113" fill="#ffcc66">◈ Event-Driven</text>
+    <rect x="302" y="95" width="100" height="26" rx="4" fill="url(#tagBg1)" stroke="#ffcc44" stroke-width=".8" stroke-opacity=".5"/>
+    <text x="352" y="113" fill="#ffffcc">◈ API Design</text>
+    <rect x="412" y="95" width="80"  height="26" rx="4" fill="url(#tagBg1)" stroke="#ffcc44" stroke-width=".8" stroke-opacity=".5"/>
+    <text x="452" y="113" fill="#ffdd88">◈ DDD</text>
+    <rect x="502" y="95" width="100" height="26" rx="4" fill="url(#tagBg1)" stroke="#ffcc44" stroke-width=".8" stroke-opacity=".5"/>
+    <text x="552" y="113" fill="#ffbb44">◈ CQRS / ES</text>
+    <rect x="612" y="95" width="100" height="26" rx="4" fill="url(#tagBg1)" stroke="#ffcc44" stroke-width=".8" stroke-opacity=".5"/>
+    <text x="662" y="113" fill="#ffcc44">◈ Zero Trust</text>
+    <rect x="722" y="95" width="120" height="26" rx="4" fill="url(#tagBg1)" stroke="#ffcc44" stroke-width=".8" stroke-opacity=".5"/>
+    <text x="782" y="113" fill="#ffeecc">◈ Adversarial Arch</text>
+  </g>
+
+  <g font-family="'Courier New',monospace" font-size="13" text-anchor="middle">
+    <rect x="122" y="131" width="110" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc9900" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="177" y="149" fill="#ffddaa">◈ Saga Pattern</text>
+    <rect x="242" y="131" width="120" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc9900" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="302" y="149" fill="#ffcc66">◈ Clean Architecture</text>
+    <rect x="372" y="131" width="110" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc9900" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="427" y="149" fill="#ffffaa">◈ Hexagonal</text>
+    <rect x="492" y="131" width="120" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc9900" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="552" y="149" fill="#ffeecc">◈ Distributed Sys</text>
+    <rect x="622" y="131" width="110" height="26" rx="4" fill="url(#tagBg2)" stroke="#cc9900" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="677" y="149" fill="#ffdd88">◈ Security by Design</text>
+  </g>
+</g>
+</svg>

@@ -1,0 +1,371 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280" preserveAspectRatio="xMidYMid slice">
+<defs>
+<style>
+/* ═══════════════════════════════════════════════════════════
+   12-SECOND ANIMATION CYCLE
+   0-8%   → VOID (everything dark, reset)
+   8-42%  → INTEGRATION (particles converge, text materializes)
+   42-65% → STABLE (text crisp, glitch fires sporadically)
+   65-85% → DISINTEGRATION (text shatters, particles scatter)
+   85-100%→ RESET (fade to void)
+═══════════════════════════════════════════════════════════ */
+
+/* ── MAIN TEXT: blur+letter-spacing morph ─────────────────── */
+.txt-main {
+  animation: textMorph 12s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes textMorph {
+  0%,7%   { opacity:0; filter:blur(26px); letter-spacing:42px; }
+  10%     { opacity:.15; filter:blur(22px); letter-spacing:36px; }
+  25%     { opacity:.65; filter:blur(8px);  letter-spacing:12px; }
+  38%     { opacity:.92; filter:blur(1.5px);letter-spacing:1px; }
+  42%,63% { opacity:1;   filter:blur(0);    letter-spacing:-1px; }
+  68%     { opacity:.88; filter:blur(2px);  letter-spacing:5px; }
+  76%     { opacity:.30; filter:blur(12px); letter-spacing:22px; }
+  84%     { opacity:0;   filter:blur(24px); letter-spacing:38px; }
+  100%    { opacity:0;   filter:blur(26px); letter-spacing:42px; }
+}
+
+/* ── GLOW LAYER: follows text, always blurred ─────────────── */
+.txt-glow {
+  animation: glowMorph 12s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes glowMorph {
+  0%,7%   { opacity:0; }
+  25%     { opacity:.12; }
+  42%,58% { opacity:.30; }
+  63%     { opacity:.22; }
+  76%     { opacity:.08; }
+  84%,100%{ opacity:0; }
+}
+
+/* ── SUBTITLE ─────────────────────────────────────────────── */
+.txt-sub {
+  animation: subMorph 12s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes subMorph {
+  0%,14%  { opacity:0; filter:blur(8px); letter-spacing:8px; }
+  42%,63% { opacity:1; filter:blur(0);   letter-spacing:1.8px; }
+  72%     { opacity:0; filter:blur(6px); letter-spacing:6px; }
+  100%    { opacity:0; }
+}
+
+/* ── CHROMATIC ABERRATION: only during stable 42-65% ─────── */
+.chr-r { opacity:0; animation: chrR 12s infinite; }
+.chr-c { opacity:0; animation: chrC 12s infinite; }
+@keyframes chrR {
+  0%,40%,67%,100%  { opacity:0; transform:translate(0,0); }
+  44%  { opacity:.80; transform:translate(-7px,2px); }
+  45%  { opacity:.0;  transform:translate(0,0); }
+  46%  { opacity:.65; transform:translate(-11px,-2px); }
+  47%  { opacity:.0;  transform:translate(0,0); }
+  52%  { opacity:.75; transform:translate(-8px,3px); }
+  53%  { opacity:.0;  transform:translate(0,0); }
+  54%  { opacity:.55; transform:translate(-5px,-1px); }
+  55%  { opacity:.0;  transform:translate(0,0); }
+  61%  { opacity:.85; transform:translate(-12px,1px); }
+  62%  { opacity:.35; transform:translate(-4px,-1px); }
+  63%  { opacity:.0;  transform:translate(0,0); }
+}
+@keyframes chrC {
+  0%,40%,67%,100%  { opacity:0; transform:translate(0,0); }
+  44%  { opacity:.80; transform:translate(7px,-2px); }
+  45%  { opacity:.0;  transform:translate(0,0); }
+  46%  { opacity:.65; transform:translate(11px,2px); }
+  47%  { opacity:.0;  transform:translate(0,0); }
+  52%  { opacity:.75; transform:translate(8px,-3px); }
+  53%  { opacity:.0;  transform:translate(0,0); }
+  54%  { opacity:.55; transform:translate(5px,1px); }
+  55%  { opacity:.0;  transform:translate(0,0); }
+  61%  { opacity:.85; transform:translate(12px,-1px); }
+  62%  { opacity:.35; transform:translate(4px,1px); }
+  63%  { opacity:.0;  transform:translate(0,0); }
+}
+
+/* ── GLITCH BAND SLICES: same stable window ───────────────── */
+.gb1 { opacity:0; animation: gb1 12s 0.00s infinite; }
+.gb2 { opacity:0; animation: gb2 12s 0.05s infinite; }
+@keyframes gb1 {
+  0%,43%,66%,100% { opacity:0; transform:translateX(0); }
+  44% { opacity:.60; transform:translateX(-16px); }
+  45% { opacity:.35; transform:translateX(10px); }
+  46% { opacity:0;   transform:translateX(0); }
+  62% { opacity:.55; transform:translateX(-13px); }
+  63% { opacity:.25; transform:translateX(7px); }
+  64% { opacity:0;   transform:translateX(0); }
+}
+@keyframes gb2 {
+  0%,43%,66%,100% { opacity:0; transform:translateX(0); }
+  44% { opacity:.45; transform:translateX(12px); }
+  45% { opacity:.20; transform:translateX(-8px); }
+  46% { opacity:0;   transform:translateX(0); }
+  62% { opacity:.40; transform:translateX(10px); }
+  63% { opacity:.15; transform:translateX(-6px); }
+  64% { opacity:0;   transform:translateX(0); }
+}
+
+/* ── PARTICLES: far ring (radius ~200px), 12 particles ────── */
+/* Integration: 5→38% converge in | Disintegration: 65→82% scatter out */
+.pf { animation-duration:12s; animation-iteration-count:infinite; animation-timing-function:ease-in-out; opacity:0; }
+.pf1  { animation-name:pf1;  animation-delay:0.00s; }
+.pf2  { animation-name:pf2;  animation-delay:0.04s; }
+.pf3  { animation-name:pf3;  animation-delay:0.08s; }
+.pf4  { animation-name:pf4;  animation-delay:0.12s; }
+.pf5  { animation-name:pf5;  animation-delay:0.16s; }
+.pf6  { animation-name:pf6;  animation-delay:0.20s; }
+.pf7  { animation-name:pf7;  animation-delay:0.24s; }
+.pf8  { animation-name:pf8;  animation-delay:0.28s; }
+.pf9  { animation-name:pf9;  animation-delay:0.32s; }
+.pf10 { animation-name:pf10; animation-delay:0.36s; }
+.pf11 { animation-name:pf11; animation-delay:0.40s; }
+.pf12 { animation-name:pf12; animation-delay:0.44s; }
+
+@keyframes pf1  {0%,4%,83%,100%{opacity:0;transform:translate(200px,0)    scale(.4)} 7%{opacity:.90;transform:translate(200px,0)    scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(200px,0)    scale(.4)}}
+@keyframes pf2  {0%,4%,83%,100%{opacity:0;transform:translate(173px,100px) scale(.4)} 7%{opacity:.85;transform:translate(173px,100px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(173px,100px) scale(.4)}}
+@keyframes pf3  {0%,4%,83%,100%{opacity:0;transform:translate(100px,173px) scale(.4)} 7%{opacity:.88;transform:translate(100px,173px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(100px,173px) scale(.4)}}
+@keyframes pf4  {0%,4%,83%,100%{opacity:0;transform:translate(0,200px)     scale(.4)} 7%{opacity:.82;transform:translate(0,200px)     scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(0,200px)     scale(.4)}}
+@keyframes pf5  {0%,4%,83%,100%{opacity:0;transform:translate(-100px,173px)scale(.4)} 7%{opacity:.87;transform:translate(-100px,173px)scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(-100px,173px)scale(.4)}}
+@keyframes pf6  {0%,4%,83%,100%{opacity:0;transform:translate(-173px,100px)scale(.4)} 7%{opacity:.91;transform:translate(-173px,100px)scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(-173px,100px)scale(.4)}}
+@keyframes pf7  {0%,4%,83%,100%{opacity:0;transform:translate(-200px,0)    scale(.4)} 7%{opacity:.86;transform:translate(-200px,0)    scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(-200px,0)    scale(.4)}}
+@keyframes pf8  {0%,4%,83%,100%{opacity:0;transform:translate(-173px,-100px)scale(.4)} 7%{opacity:.89;transform:translate(-173px,-100px)scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(-173px,-100px)scale(.4)}}
+@keyframes pf9  {0%,4%,83%,100%{opacity:0;transform:translate(-100px,-173px)scale(.4)} 7%{opacity:.84;transform:translate(-100px,-173px)scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(-100px,-173px)scale(.4)}}
+@keyframes pf10 {0%,4%,83%,100%{opacity:0;transform:translate(0,-200px)     scale(.4)} 7%{opacity:.83;transform:translate(0,-200px)     scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(0,-200px)     scale(.4)}}
+@keyframes pf11 {0%,4%,83%,100%{opacity:0;transform:translate(100px,-173px) scale(.4)} 7%{opacity:.88;transform:translate(100px,-173px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(100px,-173px) scale(.4)}}
+@keyframes pf12 {0%,4%,83%,100%{opacity:0;transform:translate(173px,-100px) scale(.4)} 7%{opacity:.85;transform:translate(173px,-100px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.3)} 81%{opacity:0;transform:translate(173px,-100px) scale(.4)}}
+
+/* ── PARTICLES: mid ring (radius ~130px), 12 particles ────── */
+.pm { animation-duration:12s; animation-iteration-count:infinite; animation-timing-function:ease-in-out; opacity:0; }
+.pm1  { animation-name:pm1;  animation-delay:0.15s; }
+.pm2  { animation-name:pm2;  animation-delay:0.19s; }
+.pm3  { animation-name:pm3;  animation-delay:0.23s; }
+.pm4  { animation-name:pm4;  animation-delay:0.27s; }
+.pm5  { animation-name:pm5;  animation-delay:0.31s; }
+.pm6  { animation-name:pm6;  animation-delay:0.35s; }
+.pm7  { animation-name:pm7;  animation-delay:0.39s; }
+.pm8  { animation-name:pm8;  animation-delay:0.43s; }
+.pm9  { animation-name:pm9;  animation-delay:0.47s; }
+.pm10 { animation-name:pm10; animation-delay:0.51s; }
+.pm11 { animation-name:pm11; animation-delay:0.55s; }
+.pm12 { animation-name:pm12; animation-delay:0.59s; }
+
+@keyframes pm1  {0%,5%,83%,100%{opacity:0;transform:translate(130px,0)    scale(.4)} 8%{opacity:.80;transform:translate(130px,0)    scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(130px,0)    scale(.4)}}
+@keyframes pm2  {0%,5%,83%,100%{opacity:0;transform:translate(113px,65px)  scale(.4)} 8%{opacity:.78;transform:translate(113px,65px)  scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(113px,65px)  scale(.4)}}
+@keyframes pm3  {0%,5%,83%,100%{opacity:0;transform:translate(65px,113px)  scale(.4)} 8%{opacity:.82;transform:translate(65px,113px)  scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(65px,113px)  scale(.4)}}
+@keyframes pm4  {0%,5%,83%,100%{opacity:0;transform:translate(0,130px)     scale(.4)} 8%{opacity:.75;transform:translate(0,130px)     scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(0,130px)     scale(.4)}}
+@keyframes pm5  {0%,5%,83%,100%{opacity:0;transform:translate(-65px,113px) scale(.4)} 8%{opacity:.79;transform:translate(-65px,113px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(-65px,113px) scale(.4)}}
+@keyframes pm6  {0%,5%,83%,100%{opacity:0;transform:translate(-113px,65px) scale(.4)} 8%{opacity:.83;transform:translate(-113px,65px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(-113px,65px) scale(.4)}}
+@keyframes pm7  {0%,5%,83%,100%{opacity:0;transform:translate(-130px,0)    scale(.4)} 8%{opacity:.77;transform:translate(-130px,0)    scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(-130px,0)    scale(.4)}}
+@keyframes pm8  {0%,5%,83%,100%{opacity:0;transform:translate(-113px,-65px)scale(.4)} 8%{opacity:.81;transform:translate(-113px,-65px)scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(-113px,-65px)scale(.4)}}
+@keyframes pm9  {0%,5%,83%,100%{opacity:0;transform:translate(-65px,-113px)scale(.4)} 8%{opacity:.76;transform:translate(-65px,-113px)scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(-65px,-113px)scale(.4)}}
+@keyframes pm10 {0%,5%,83%,100%{opacity:0;transform:translate(0,-130px)    scale(.4)} 8%{opacity:.74;transform:translate(0,-130px)    scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(0,-130px)    scale(.4)}}
+@keyframes pm11 {0%,5%,83%,100%{opacity:0;transform:translate(65px,-113px) scale(.4)} 8%{opacity:.80;transform:translate(65px,-113px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(65px,-113px) scale(.4)}}
+@keyframes pm12 {0%,5%,83%,100%{opacity:0;transform:translate(113px,-65px) scale(.4)} 8%{opacity:.78;transform:translate(113px,-65px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.2)} 81%{opacity:0;transform:translate(113px,-65px) scale(.4)}}
+
+/* ── PARTICLES: close ring (radius ~70px), 12 particles ─────── */
+.pc { animation-duration:12s; animation-iteration-count:infinite; animation-timing-function:ease-in-out; opacity:0; }
+.pc1  { animation-name:pc1;  animation-delay:0.26s; }
+.pc2  { animation-name:pc2;  animation-delay:0.30s; }
+.pc3  { animation-name:pc3;  animation-delay:0.34s; }
+.pc4  { animation-name:pc4;  animation-delay:0.38s; }
+.pc5  { animation-name:pc5;  animation-delay:0.42s; }
+.pc6  { animation-name:pc6;  animation-delay:0.46s; }
+.pc7  { animation-name:pc7;  animation-delay:0.50s; }
+.pc8  { animation-name:pc8;  animation-delay:0.54s; }
+.pc9  { animation-name:pc9;  animation-delay:0.58s; }
+.pc10 { animation-name:pc10; animation-delay:0.62s; }
+.pc11 { animation-name:pc11; animation-delay:0.66s; }
+.pc12 { animation-name:pc12; animation-delay:0.70s; }
+
+@keyframes pc1  {0%,6%,83%,100%{opacity:0;transform:translate(70px,0)   scale(.4)} 9%{opacity:.70;transform:translate(70px,0)   scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(70px,0)   scale(.4)}}
+@keyframes pc2  {0%,6%,83%,100%{opacity:0;transform:translate(61px,35px) scale(.4)} 9%{opacity:.68;transform:translate(61px,35px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(61px,35px) scale(.4)}}
+@keyframes pc3  {0%,6%,83%,100%{opacity:0;transform:translate(35px,61px) scale(.4)} 9%{opacity:.72;transform:translate(35px,61px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(35px,61px) scale(.4)}}
+@keyframes pc4  {0%,6%,83%,100%{opacity:0;transform:translate(0,70px)    scale(.4)} 9%{opacity:.65;transform:translate(0,70px)    scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(0,70px)    scale(.4)}}
+@keyframes pc5  {0%,6%,83%,100%{opacity:0;transform:translate(-35px,61px)scale(.4)} 9%{opacity:.69;transform:translate(-35px,61px)scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(-35px,61px)scale(.4)}}
+@keyframes pc6  {0%,6%,83%,100%{opacity:0;transform:translate(-61px,35px)scale(.4)} 9%{opacity:.73;transform:translate(-61px,35px)scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(-61px,35px)scale(.4)}}
+@keyframes pc7  {0%,6%,83%,100%{opacity:0;transform:translate(-70px,0)   scale(.4)} 9%{opacity:.67;transform:translate(-70px,0)   scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(-70px,0)   scale(.4)}}
+@keyframes pc8  {0%,6%,83%,100%{opacity:0;transform:translate(-61px,-35px)scale(.4)} 9%{opacity:.71;transform:translate(-61px,-35px)scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(-61px,-35px)scale(.4)}}
+@keyframes pc9  {0%,6%,83%,100%{opacity:0;transform:translate(-35px,-61px)scale(.4)} 9%{opacity:.66;transform:translate(-35px,-61px)scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(-35px,-61px)scale(.4)}}
+@keyframes pc10 {0%,6%,83%,100%{opacity:0;transform:translate(0,-70px)    scale(.4)} 9%{opacity:.64;transform:translate(0,-70px)    scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(0,-70px)    scale(.4)}}
+@keyframes pc11 {0%,6%,83%,100%{opacity:0;transform:translate(35px,-61px) scale(.4)} 9%{opacity:.70;transform:translate(35px,-61px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(35px,-61px) scale(.4)}}
+@keyframes pc12 {0%,6%,83%,100%{opacity:0;transform:translate(61px,-35px) scale(.4)} 9%{opacity:.68;transform:translate(61px,-35px) scale(1)} 38%{opacity:0;transform:translate(0,0) scale(.2)} 64%{opacity:0;transform:translate(0,0) scale(.2)} 67%{opacity:1;transform:translate(0,0) scale(1.1)} 81%{opacity:0;transform:translate(61px,-35px) scale(.4)}}
+</style>
+
+<!-- ── FIRE GRADIENT BACKGROUND ────────────────────────────── -->
+<linearGradient id="bgG" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%"   stop-color="#000000"/>
+  <stop offset="10%"  stop-color="#0d0000"/>
+  <stop offset="28%"  stop-color="#6b0000"/>
+  <stop offset="40%"  stop-color="#cc0000"/>
+  <stop offset="50%"  stop-color="#ff5500"/>
+  <stop offset="58%"  stop-color="#cc0000"/>
+  <stop offset="70%"  stop-color="#550099"/>
+  <stop offset="83%"  stop-color="#0a001a"/>
+  <stop offset="100%" stop-color="#000000"/>
+</linearGradient>
+
+<!-- ── TEXT GRADIENT ─────────────────────────────────────────── -->
+<linearGradient id="txtG" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%"   stop-color="#ffffff"/>
+  <stop offset="40%"  stop-color="#ffe5cc"/>
+  <stop offset="55%"  stop-color="#ffffff"/>
+  <stop offset="100%" stop-color="#ddb8ff"/>
+</linearGradient>
+
+<!-- ── PARTICLE COLORS ────────────────────────────────────────── -->
+<linearGradient id="pfG" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" stop-color="#ff5500"/><stop offset="100%" stop-color="#ff2200"/>
+</linearGradient>
+<linearGradient id="pmG" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" stop-color="#cc44ff"/><stop offset="100%" stop-color="#8800cc"/>
+</linearGradient>
+
+<!-- ── SMOKE FILTER (runs throughout, spikes on disintegration) ── -->
+<filter id="smokeF" x="-15%" y="-45%" width="130%" height="190%" color-interpolation-filters="sRGB">
+  <feTurbulence type="fractalNoise" baseFrequency="0.014 0.040" numOctaves="4" seed="9" result="t">
+    <animate attributeName="baseFrequency" values="0.014 0.040;0.020 0.055;0.011 0.030;0.018 0.048;0.014 0.040" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="seed" values="9;13;4;17;9" dur="11s" repeatCount="indefinite"/>
+  </feTurbulence>
+  <feDisplacementMap in="SourceGraphic" in2="t" xChannelSelector="R" yChannelSelector="G" result="d">
+    <animate attributeName="scale" values="6;6;6;6;6;6;6;42;26;10;6;6;6;6;6;6;6;6;6;6" dur="12s" repeatCount="indefinite"/>
+  </feDisplacementMap>
+  <feGaussianBlur in="d" stdDeviation="0.5" result="s"/>
+  <feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+
+<!-- ── GLOW FILTER ────────────────────────────────────────────── -->
+<filter id="glowF" x="-30%" y="-55%" width="160%" height="210%">
+  <feGaussianBlur stdDeviation="7" result="b"/>
+  <feComposite in="SourceGraphic" in2="b" operator="over"/>
+</filter>
+
+<!-- ── SCANLINES ─────────────────────────────────────────────── -->
+<pattern id="sl" width="900" height="4" patternUnits="userSpaceOnUse">
+  <rect width="900" height="1" fill="#000" fill-opacity=".20"/>
+</pattern>
+
+<!-- ── VIGNETTE ──────────────────────────────────────────────── -->
+<linearGradient id="vgH" x1="0" x2="1" y1="0" y2="0">
+  <stop offset="0%"   stop-color="#000" stop-opacity=".58"/>
+  <stop offset="14%"  stop-color="#000" stop-opacity="0"/>
+  <stop offset="86%"  stop-color="#000" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#000" stop-opacity=".58"/>
+</linearGradient>
+<linearGradient id="vgV" x1="0" x2="0" y1="0" y2="1">
+  <stop offset="0%"   stop-color="#000" stop-opacity=".52"/>
+  <stop offset="20%"  stop-color="#000" stop-opacity="0"/>
+  <stop offset="72%"  stop-color="#000" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#000" stop-opacity=".38"/>
+</linearGradient>
+
+<!-- ── CLIP PATHS for glitch bands ───────────────────────────── -->
+<clipPath id="cp1"><rect x="0" y="112" width="900" height="20"/></clipPath>
+<clipPath id="cp2"><rect x="0" y="138" width="900" height="14"/></clipPath>
+</defs>
+
+<!-- ══ BACKGROUND ══════════════════════════════════════════════ -->
+<rect width="900" height="280" fill="url(#bgG)"/>
+<rect width="900" height="280" fill="url(#sl)" opacity=".55"/>
+<rect width="900" height="280" fill="url(#vgH)"/>
+<rect width="900" height="280" fill="url(#vgV)"/>
+
+<!-- ══ VENOM TENTACLES ═════════════════════════════════════════ -->
+<path d="M-5,280 C28,280 22,212 64,228 C106,244 112,278 156,244 C200,210 208,184 252,213 C296,242 302,272 348,233 C394,194 400,166 450,206 C500,246 506,270 554,228 C602,186 608,158 656,196 C704,234 710,268 756,230 C802,192 810,168 858,204 C880,222 888,258 910,260 L910,280 Z" fill="#040000" opacity=".90"/>
+<path d="M-5,280 C52,280 62,238 114,254 C166,270 172,280 226,256 C280,232 286,206 336,238 C386,270 392,280 446,250 C500,220 506,196 558,230 C610,264 616,280 672,256 C728,232 736,206 788,238 C828,262 842,280 910,268 L910,280 Z" fill="#080000" opacity=".65"/>
+<path d="M78,280  L100,230 L122,280 Z" fill="#140000" opacity=".75"/>
+<path d="M218,280 L242,215 L266,280 Z" fill="#140000" opacity=".65"/>
+<path d="M376,280 L408,196 L440,280 Z" fill="#1a0000" opacity=".70"/>
+<path d="M538,280 L562,208 L586,280 Z" fill="#140000" opacity=".65"/>
+<path d="M698,280 L720,218 L742,280 Z" fill="#140000" opacity=".70"/>
+<path d="M820,280 L840,235 L860,280 Z" fill="#100000" opacity=".65"/>
+
+<!-- ══ PARTICLES — far ring (orange fire) ══════════════════════ -->
+<g transform="translate(450,142)">
+  <circle class="pf pf1"  cx="0" cy="0" r="3.5" fill="#ff5500"/>
+  <circle class="pf pf2"  cx="0" cy="0" r="3"   fill="#ff3300"/>
+  <circle class="pf pf3"  cx="0" cy="0" r="3.5" fill="#ff7722"/>
+  <circle class="pf pf4"  cx="0" cy="0" r="3"   fill="#ffcc44"/>
+  <circle class="pf pf5"  cx="0" cy="0" r="3.5" fill="#ff4400"/>
+  <circle class="pf pf6"  cx="0" cy="0" r="3"   fill="#ff6600"/>
+  <circle class="pf pf7"  cx="0" cy="0" r="3.5" fill="#ff5500"/>
+  <circle class="pf pf8"  cx="0" cy="0" r="3"   fill="#ff2200"/>
+  <circle class="pf pf9"  cx="0" cy="0" r="3.5" fill="#ff8844"/>
+  <circle class="pf pf10" cx="0" cy="0" r="3"   fill="#ffaa22"/>
+  <circle class="pf pf11" cx="0" cy="0" r="3.5" fill="#ff4400"/>
+  <circle class="pf pf12" cx="0" cy="0" r="3"   fill="#ff6600"/>
+</g>
+
+<!-- ══ PARTICLES — mid ring (violet) ══════════════════════════ -->
+<g transform="translate(450,142)">
+  <circle class="pm pm1"  cx="0" cy="0" r="2.8" fill="#cc44ff"/>
+  <circle class="pm pm2"  cx="0" cy="0" r="2.5" fill="#9933cc"/>
+  <circle class="pm pm3"  cx="0" cy="0" r="2.8" fill="#bb66ee"/>
+  <circle class="pm pm4"  cx="0" cy="0" r="2.5" fill="#8800cc"/>
+  <circle class="pm pm5"  cx="0" cy="0" r="2.8" fill="#dd55ff"/>
+  <circle class="pm pm6"  cx="0" cy="0" r="2.5" fill="#aa33cc"/>
+  <circle class="pm pm7"  cx="0" cy="0" r="2.8" fill="#cc44ff"/>
+  <circle class="pm pm8"  cx="0" cy="0" r="2.5" fill="#9922bb"/>
+  <circle class="pm pm9"  cx="0" cy="0" r="2.8" fill="#bb55ee"/>
+  <circle class="pm pm10" cx="0" cy="0" r="2.5" fill="#7700aa"/>
+  <circle class="pm pm11" cx="0" cy="0" r="2.8" fill="#dd66ff"/>
+  <circle class="pm pm12" cx="0" cy="0" r="2.5" fill="#aa44dd"/>
+</g>
+
+<!-- ══ PARTICLES — close ring (white/amber sparks) ═══════════ -->
+<g transform="translate(450,142)">
+  <rect class="pc pc1"  x="-2" y="-2" width="4" height="4" rx=".8" fill="#ffffff"/>
+  <rect class="pc pc2"  x="-2" y="-2" width="4" height="4" rx=".8" fill="#ffeecc"/>
+  <rect class="pc pc3"  x="-2" y="-2" width="4" height="4" rx=".8" fill="#ff8844"/>
+  <rect class="pc pc4"  x="-2" y="-2" width="4" height="4" rx=".8" fill="#ffffff"/>
+  <rect class="pc pc5"  x="-2" y="-2" width="4" height="4" rx=".8" fill="#ffcc44"/>
+  <rect class="pc pc6"  x="-2" y="-2" width="4" height="4" rx=".8" fill="#ff7722"/>
+  <rect class="pc pc7"  x="-2" y="-2" width="4" height="4" rx=".8" fill="#ffffff"/>
+  <rect class="pc pc8"  x="-2" y="-2" width="4" height="4" rx=".8" fill="#ffddaa"/>
+  <rect class="pc pc9"  x="-2" y="-2" width="4" height="4" rx=".8" fill="#ff9955"/>
+  <rect class="pc pc10" x="-2" y="-2" width="4" height="4" rx=".8" fill="#ffffff"/>
+  <rect class="pc pc11" x="-2" y="-2" width="4" height="4" rx=".8" fill="#ffffcc"/>
+  <rect class="pc pc12" x="-2" y="-2" width="4" height="4" rx=".8" fill="#ff8833"/>
+</g>
+
+<!-- ══ CHROMATIC ABERRATION (stable phase only) ═══════════════ -->
+<text class="chr-r" x="450" y="152"
+      font-size="86" font-family="'Arial Black',Impact,'Haettenschweiler',sans-serif"
+      font-weight="900" fill="#ff0000" fill-opacity=".85"
+      text-anchor="middle" letter-spacing="-1">RafalW3bCraft</text>
+<text class="chr-c" x="450" y="152"
+      font-size="86" font-family="'Arial Black',Impact,'Haettenschweiler',sans-serif"
+      font-weight="900" fill="#00ffee" fill-opacity=".68"
+      text-anchor="middle" letter-spacing="-1">RafalW3bCraft</text>
+
+<!-- ══ GLITCH BANDS (clipped horizontal slices) ═══════════════ -->
+<g class="gb1" clip-path="url(#cp1)">
+  <text x="450" y="152" font-size="86"
+        font-family="'Arial Black',Impact,sans-serif" font-weight="900"
+        fill="white" fill-opacity=".93" text-anchor="middle" letter-spacing="-1">RafalW3bCraft</text>
+</g>
+<g class="gb2" clip-path="url(#cp2)">
+  <text x="450" y="152" font-size="86"
+        font-family="'Arial Black',Impact,sans-serif" font-weight="900"
+        fill="#ff9944" fill-opacity=".88" text-anchor="middle" letter-spacing="-1">RafalW3bCraft</text>
+</g>
+
+<!-- ══ GLOW HALO ═══════════════════════════════════════════════ -->
+<text class="txt-glow" x="450" y="152"
+      font-size="86" font-family="'Arial Black',Impact,sans-serif"
+      font-weight="900" fill="#ff6622"
+      text-anchor="middle" letter-spacing="-1"
+      filter="url(#glowF)">RafalW3bCraft</text>
+
+<!-- ══ MAIN TITLE: text morph + smoke/disintegration filter ═══ -->
+<text class="txt-main" x="450" y="152"
+      font-size="86" font-family="'Arial Black',Impact,'Haettenschweiler',sans-serif"
+      font-weight="900" fill="url(#txtG)" stroke="white" stroke-width="1.5"
+      text-anchor="middle" letter-spacing="-1"
+      filter="url(#smokeF)">RafalW3bCraft</text>
+
+<!-- ══ SUBTITLE ════════════════════════════════════════════════ -->
+<text class="txt-sub" x="450" y="210"
+      font-size="17" font-family="'Courier New',Courier,monospace"
+      fill="#ffcc44" text-anchor="middle">
+  &#9672; Builder &#183; Breaker &#183; Architect &#183; Adversary &#9672;
+</text>
+</svg>
